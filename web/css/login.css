@@ -1,0 +1,43 @@
+body{
+	background-color:#c2c2c2;
+	font-family: sans-sefif;
+	font-size: 17px;
+}
+form{
+	width:25%;
+	border:1px solid #000;
+	margin:auto;
+	padding:20px;
+}
+label{
+	width: 100%;
+	display:block;
+}
+input{
+	font:15px;
+	width:100%;
+	padding:7px;
+	outline:none;
+	border:1px solid #solid;
+}
+input:focus{
+	border:1px solid #c2c2c2;
+	transition:0.2s;
+}
+input[type="submit"]{
+	margin-bottom:0px;
+	background:#1668cd;
+	color:#fff;
+	border:none;
+}
+input[type="submit"]:hover{
+	background:#4a88f4;
+	transition:0.2;
+	cursor:pointer;
+}
+.form-group{
+	margin-bottom:20px;
+}
+h2{
+	text-align:center;
+}
