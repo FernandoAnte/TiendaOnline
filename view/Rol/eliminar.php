@@ -2,9 +2,9 @@
     <h3 class="display-4">Eliminar Rol</h3>
 </div>
 <?php
-    foreach ($Rol as $Rol) {
+    foreach ($rol as $Rol) {
 ?>
-<form action="<?php echo getUrl("Rol","Rol","postDelete"); ?>" method="post">
+<form action="<?php echo getUrlAdmin("Rol","Rol","postDelete"); ?>" method="post">
     <div class="row">
         <div class="form-group col-md-4">
             <label>Nombre</label>

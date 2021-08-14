@@ -13,9 +13,10 @@ $(document).ready(function(){
         var url=$(this).attr("data-url");
        
          $.ajax({
-            url:"../../controller/ciudad/filtro.php",
+           // url:"../../controller/ciudad/filtro.php",
+           url:url,
             data:"buscar="+buscar,
-            type:"GET",
+            type:"POST",
             success:function(datos){
                 $("tbody").html(datos);
             }
@@ -34,6 +35,7 @@ $(document).ready(function(){
       });
 
     });
+
     $(document).on("click","#editarModal",function(){
         var url=$(this).attr("data-url");
         var id=$(this).attr("data-id");
@@ -66,23 +68,23 @@ $(document).ready(function(){
 
     $("#alerta").delay(4000).fadeOut();
 
-    /* $(document).on("click","#agregar",function(){
+     $(document).on("click","#agregar",function(){
         var select=$("#copy").html();
-
-        $("#contenido").append(
+       // alert("holaaaa");
+         $("#contenido").append(
             "<div class='row col-md-4 form-group'>"
                 +"<label class='mx-3'>Categoria</label>"
                 +"<div class='col-md-10'>"
-                  +"<select class='form-control' name='idCat[]'>"+select+"</select>"
+                  +"<select class='form-control' name='idCateg[]'>"+select+"</select>"
                 +"</div>"
                 +"<div>"
-                  +"<button type='button' class='btn btn danger' id='quitar'>-</button>"
+                  +"<button type='button' class='btn btn-danger' id='quitar'>-</button>"
                 +"</div>"
             +"<div>"   
-        );
-    }); */
+        ); 
+    }); 
 
-    var option=$("select[name='cat_id']option:selected").text();
+    /* var option=$("select[name='cat_id']option:selected").text();
     var id=$("#idCateg").val();
     if (id!=""){
 
@@ -103,11 +105,11 @@ $(document).ready(function(){
         }
 
      }
-   }
+   } */
 
     $(document).on("click","#quitar",function(){
-        var option=$("select[name='cat_id']option:selected").text();
-        var id=$ ("#cat_id").val();
+        var option=$("select[name='idCateg']option:selected").text();
+        var id=$ ("#idCateg").val();
 
         if (id!=""){
            $("#categoria-"+id).remove();

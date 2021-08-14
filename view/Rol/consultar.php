@@ -26,9 +26,8 @@
                     echo "<td>" . $rol['idRol'] . "</td>";
                     echo "<td>" . $rol['descRol'] . "</td>";
                     
-                    echo "<td><a href='".getUrlAdmin("Rol","Rol","getEditar", array("id" => $rol['idRol']))."'><button type='button' >Editar</button></a></td>";
-                    echo "<td><a><button id='eliminarModal' type='button'data-toggle='modal' data-target='#exampleModal' data-id='".$rol['idRol']."' data-url='".getUrl(
-                        `Rol`,`Rol`,`getDeleteModal`,false,`ajax`)."'>Eliminar</button></a></td>";
+                    echo "<td><a href='".getUrlAdmin("Rol","Rol","getEditar", array("id" => $rol['idRol']))."'><button type='button'>Editar</button></a></td>";
+                    echo "<td><a href='".getUrlAdmin("Rol","Rol","getDelete", array("id" => $rol['idRol']))."'><button type='button'>Eliminar</button></a></td>";
                     echo "</tr>";
                 }
                 ?>

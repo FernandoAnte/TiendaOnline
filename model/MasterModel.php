@@ -1,18 +1,24 @@
 <?php
 include_once '../lib/conf/Connection.php';
 
-class MasterModel extends Connection
-{
+class MasterModel extends Connection{
 
     public function insert($sql)
     {
         $result = mysqli_query($this->getConnect(), $sql);
+        if(!$result){
+            echo mysqli_error($this->getConnect());
+        }
         return $result;
     }
 
     public function consult($sql)
     {
+
         $result = mysqli_query($this->getConnect(), $sql);
+        if(!$result){
+            echo mysqli_error($this->getConnect());
+        }
         return $result;
     }
 
@@ -32,7 +38,7 @@ class MasterModel extends Connection
     {
         $sql = "select max($id) from $tabla";
         $resultado = mysqli_query($this->getConnect(), $sql);
-        $contador = mysqli_fetch_row($resultado);
+        $contador=mysqli_fetch_row($resultado);
         return end($contador) + 1;
     }
 }

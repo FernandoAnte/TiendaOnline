@@ -15,24 +15,10 @@ class RolController
 
     public function getInsert()
     {
-        include_once '../View/Rol/crear.php';
+        include_once '../View/Rol/insert.php';
     }
 
-    public function postInsert()
-    {
-        if (isset($_POST)) {
-
-            $nombre = $_POST['nombre'];
-            $id = $this->objRol->autoIncrement("idRol", "rol");
-            $sql = "INSERT INTO rol values ($id,'$nombre')";
-            $this->objRol->insert($sql);
-            $this->objRol->close();
-             redirect(getUrlAdmin("Rol","Rol","consultar"));
-
-        } else {
-            echo "No llegaron los datos para Registrar";
-        }
-    }
+   
 
     public function consultar()
     {
@@ -72,35 +58,46 @@ class RolController
     }
 
 
-    public function getDeleteModal(){
-        $id=$_POST['id'];
+    public function getDelete(){
 
+        $id=$_GET['id'];
         $sql="SELECT * FROM Rol WHERE idRol=$id";
-        $rol = $this->objRol->consult($sql);
+        $rol = $this->objRol->delete($sql);
 
-        include_once '../view/ciudad/deleteModal.php';
+        include_once '../view/Rol/eliminar.php';
 
     }
 
     public function postDelete(){
-        
-        $ciu_id=$_POST['ciu_id'];
-        $ciu_imagen=$_POST['ciu_imagen'];
-
-        $sql="DELETE FROM ciudad WHERE ciu_id=$ciu_id";
-
-        $ejecutar= $obj->consult($sql);
-
-        if ($ejecutar) {
-            unlink($ciu_imagen);
-            redirect(getUrl("Ciudad","Ciudad","consult"));
+        if (isset($_POST)){
+        $idRol=$_POST['idRol'];
+        $sql="DELETE  FROM rol WHERE idRol= $idRol";
+        $this->objRol->insert($sql);
+        $this->objRol->close();
+        redirect(getUrlAdmin("Rol","Rol","consultar"));
         }else{
-            echo "algo salió mal";
+            echo "epa nada";
         }
+    }
 
+    public function postInsert()
+    {
+        if (isset($_POST)) {
+
+            $nombre = $_POST['nombre'];
+            $id = $this->objRol->autoIncrement("idRol", "rol");
+            $sql = "INSERT INTO rol values ($id,'$nombre')";
+            $this->objRol->insert($sql);
+            $this->objRol->close();
+             redirect(getUrlAdmin("Rol","Rol","consultar"));
+
+        } else {
+            echo "No llegaron los datos para Registrar";
+        }
     }
 
     public function filtrar()
     {
+
     }
 }

@@ -2,6 +2,6 @@
   $server="localhost";
   $user="root";
   $pass="";
-  $database="tiendaonline";
+  $database="tienda";
   $port="3306";
 ?>

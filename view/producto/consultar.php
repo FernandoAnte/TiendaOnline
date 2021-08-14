@@ -13,23 +13,32 @@
         <table class="table table-striped table-hover" id="datatablesSimple">
             <thead>
                 <tr>
-                    <th>idProd</th>
                     <th>idMarca</th>
                     <th>nomProd</th>
+                    <th>cantProd</th>
                     <th>precProd</th>
-                 
+                    <th>imagProd</th>
+                    <th>nomCateg</th>
+                    <th>Editar</th>
+                    <th>Estado</th>
                 </tr>
             </thead>
             <tbody id="tbody">
                 <?php
                 foreach ($producto as $prod) {
+                    echo "</tr>";
+                        echo "<td>" . $prod['idMarca'] . "</td>";
+                        echo "<td>" . $prod['idnomProd'] . "</td>";
+                        echo "<td>" . $prod['cantProd'] . "</td>";   
+                        echo "<td>" . $prod['precProd'] . "</td>";
+                        echo "<td>" . $prod['imagProd'] . "</td>";
+                        echo "<td>" . $prod['nomCateg'] . "</td>";
 
-                    echo "<td>" . $prod['idProd'] . "</td>";
-                    echo "<td>" . $prod['idMarca'] . "</td>";
-                    echo "<td>" . $prod['nomProd'] . "</td>";
-                    echo "<td>" . $prod['precProd'] . "</td>";
-                    echo "<td><a><button type='button' >Editar</button></a></td>";
-                    echo "<td><a><button type='button'  >Eliminar</button></a></td>";
+                        echo "<td><a><button type='button' >Editar</button></a></td>";
+                        echo "<td><a href='".getUrlAdmin("Rol","Rol","getEditar", array("id" => $prod['idProd']))."'><button type='button' >Editar</button></a></td>";
+
+                        echo "<td><a><button type='button'>Eliminar</button></a></td>";
+
                     echo "</tr>";
                 }
                 ?>
