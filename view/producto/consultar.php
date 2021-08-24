@@ -18,25 +18,23 @@
                     <th>cantProd</th>
                     <th>precProd</th>
                     <th>imagProd</th>
-                    <th>nomCateg</th>
                     <th>Editar</th>
                     <th>Estado</th>
                 </tr>
+                <img src='' alt="" width='55px' height='55px'>
             </thead>
             <tbody id="tbody">
                 <?php
                 foreach ($producto as $prod) {
                     echo "</tr>";
                         echo "<td>" . $prod['idMarca'] . "</td>";
-                        echo "<td>" . $prod['idnomProd'] . "</td>";
+                        echo "<td>" . $prod['nomProd'] . "</td>";
                         echo "<td>" . $prod['cantProd'] . "</td>";   
                         echo "<td>" . $prod['precProd'] . "</td>";
-                        echo "<td>" . $prod['imagProd'] . "</td>";
-                        echo "<td>" . $prod['nomCateg'] . "</td>";
+                        echo "<td> <img src='" . $prod['imagProd'] . "' alt='' width='55px' height='55px'></td>";
+                      
 
-                        echo "<td><a><button type='button' >Editar</button></a></td>";
-                        echo "<td><a href='".getUrlAdmin("Rol","Rol","getEditar", array("id" => $prod['idProd']))."'><button type='button' >Editar</button></a></td>";
-
+                        echo "<td><a href='".getUrlAdmin("Producto","Producto","getEditar", array("id" => $prod['idProd']))."'><button type='button' >Editar</button></a></td>";
                         echo "<td><a><button type='button'>Eliminar</button></a></td>";
 
                     echo "</tr>";

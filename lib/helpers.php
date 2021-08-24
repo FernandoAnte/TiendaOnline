@@ -27,16 +27,15 @@ function getUrl($modulo, $controlador, $funcion, $parametros = false, $ajax = fa
 
    if ($parametros != false) {
       foreach ($parametros as $key => $valor) {
-         $url .= "&$key=$valor";
+         $url.="&$key=$valor";
       }
    }
 
    return $url;
 }
-function resolve()
-{
+function resolve(){
 
-   $modulo = ucwords($_GET['modulo']); //ucwords convierter la primer letra en mayuscula
+   $modulo = ucwords($_GET['modulo']); //ucwords convierte la primer letra en mayuscula
    $controlador = ucwords($_GET['controlador']);
    $funcion = $_GET['funcion'];
 

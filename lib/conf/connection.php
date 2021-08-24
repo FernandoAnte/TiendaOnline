@@ -26,7 +26,7 @@
 
 
         private function connect(){
-               $this -> link=mysqli_connect($this->server,$this->user,$this->pass,$this->database);// estableciendo la conexion con la base de datos almacenada en la var link
+               $this->link=mysqli_connect($this->server,$this->user,$this->pass,$this->database);// estableciendo la conexion con la base de datos almacenada en la var link
                if(!$this->link){  // validar si existe la conexion
                  die(mysqli_error($this->link)); // si es falso,para la ejecucion y muestra error
                }else{

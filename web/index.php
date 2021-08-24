@@ -7,7 +7,7 @@
    echo "<body>";
           // echo "<div class='container'>";
          include_once '../view/partial/navbarr.php';
-         include_once '../view/partial/carrusel.php';
+        // include_once '../view/partial/carrusel.php';
  
         if (isset($_GET['modulo'])) {
             resolve();

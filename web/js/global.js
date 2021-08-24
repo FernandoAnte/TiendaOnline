@@ -120,6 +120,28 @@ $(document).ready(function(){
     $(this).parent().parent().remove();
     
   }); 
+    // DataTables
+  $("#tabla").DataTable({
+      responsive: true,
+      languaje:{
+        "decimal":        "",
+        "emptyTable":     "No hay datos",
+        "info":           "Consultando_START_a_AND_de_TOTAL_registros",
+        "infoEmpty":      "Mostrando 0 a 0 de 0 registros",
+        "infoFiltered":   "filtro_MAX_registros en total",
+        "thousands":      ".",
+        "lengthMenu":      "Buscar_MENU_Registros",
+        "loadingRecords": "Cargando...",
+        "processing":     "Procesando...",
+        "search":         "Buscar",
+        "zeroRecords":    "No se encontraron resultados",
+        "paginate":{
+            "next":       "Siguiente",
+            "previous":   "Anterior",
+    
+        } 
+      },
+  });
 });  
 
 

@@ -9,8 +9,7 @@
         <div class="form-group col-md-4">
             <label>Nombre</label>
             <input type="hidden" name="idRol" value="<?php echo $Rol['idRol']; ?>">
-            <input type="text" readonly name="descRol" class="form-control" value="<?php echo $Rol
-            ['descRol'] ?>"> 
+            <input type="text" readonly name="descRol" class="form-control" value="<?php echo $Rol['descRol'] ?>"> 
             <p class="mt-4">¿Esta seguro de eliminar el Rol?</p>
         </div>
     </div>

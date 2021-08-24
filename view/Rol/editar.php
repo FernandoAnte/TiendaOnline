@@ -4,7 +4,7 @@
 <form action="<?php echo getUrlAdmin("Rol","Rol","postEditar"); ?>" method="POST">
     <div class="row">
        <div class="form-group col-md-4">
-          <label>Nombre</label>
+          <label>Nombre Rol</label>
           <input type="text"name="nombre"class="form-control" value="<?php echo $r['descRol'] ?>">
           <input type="hidden"name="id" value="<?php echo $r['idRol'] ?>">
 
