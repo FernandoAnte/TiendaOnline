@@ -1,73 +1,34 @@
-<div class="container ">
-   <div class="card-deck row mt-4">
-      <div class="card col-md-3" style="width: 18rem;">
-         <img class="card-img-top mt-3" src="imagen/tenis/british-knights-1.jpg" alt="Card image cap">
-         <div class="card-body">
-            <h5 class="card-title">Tenis</h5>
-            <p class="card-text">british-knights<br>$250.000</p>
-            <a href="#" class="btn btn-warning">Ver detalle</a>
-         </div>
-      </div>
+<?php
+include_once '../model/masterModel.php';
+$obj = new MasterModel();
 
-      <div class="card col-md-3" style="width: 18rem;">
-         <img class="card-img-top mt-3" src="imagen/tenis/british-knights-2.jpg" alt="Card image cap">
-         <div class="card-body">
-            <h5 class="card-title">tenis</h5>
-            <p class="card-text">british-knights<br>$199.000</p>
-            <a href="#" class="btn btn-warning">Ver detalle</a>
-         </div>
-      </div>
-      <div class="card col-md-3" style="width: 18rem;">
-         <img class="card-img-top mt-3" src="imagen/tenis/nikeCourtVision.jpg" alt="Card image cap">
-         <div class="card-body">
-            <h5 class="card-title">tenis</h5>
-            <p class="card-text">nikeCourtVision<br>$220.000</p>
-            <a href="#" class="btn btn-warning">Ver detalle</a>
-         </div>
-      </div>
-      <div class="card col-md-3" style="width: 18rem;">
-         <img class="card-img-top mt-3" src="imagen/tenis/nike1.1.jpg" alt="Card image cap">
-         <div class="card-body">
-            <h5 class="card-title">tenis</h5>
-            <p class="card-text">Nike<br>$210.000</p>
-            <a href="#" class="btn btn-warning">Ver detalle</a>
-         </div>
-      </div>
-   </div>
-   <div class="card-deck row mt-4">
-      <div class="card col-md-3" style="width: 18rem;">
-         <img class="card-img-top mt-3" src="imagen/tenis/nike2.1.jpg" alt="Card image cap">
-         <div class="card-body">
-            <h5 class="card-title">Tenis</h5>
-            <p class="card-text">Nike<br>$159.000</p>
-            <a href="#" class="btn btn-warning">Ver detalle</a>
-         </div>
-      </div>
-
-      <div class="card col-md-3" style="width: 18rem;">
-         <img class="card-img-top mt-3" src="imagen/tenis/adidas-performance2.1.jpg" alt="Card image cap">
-         <div class="card-body">
-            <h5 class="card-title">tenis</h5>
-            <p class="card-text">Adidas-performance<br>$199000</p>
-            <a href="#" class="btn btn-warning">Ver detalle</a>
-         </div>
-      </div>
-      <div class="card col-md-3" style="width: 18rem;">
-         <img class="card-img-top mt-3" src="imagen/tenis/levis-1.jpg" alt="Card image cap">
-         <div class="card-body">
-            <h5 class="card-title">tenis</h5>
-            <p class="card-text">levis<br>$289.000</p>
-            <a href="#" class="btn btn-warning">Ver detalle</a>
-         </div>
-      </div>
-      <div class="card col-md-3" style="width: 18rem;">
-         <img class="card-img-top mt-3" src="imagen/tenis/bosi-0.jpg" alt="Card image cap">
-         <div class="card-body">
-            <h5 class="card-title">tenis</h5>
-            <p class="card-text">bosi<br>$295.000</p>
-            <a href="#" class="btn btn-warning">Ver detalle</a>
-         </div>
-      </div>
-   </div>
-</div>
-
+$sql = "SELECT * FROM producto";
+$producto = $obj->consult($sql);
+?>
+<?php
+$contador = 1;
+foreach ($producto as $prod) {
+   if ($contador == 1) {
+   echo "<div class='row'>";
+   }
+      echo "<div class='ml-5  mt-4 col-md-3'>";
+         echo "<div class='card-deck row mt-4'>";
+   //echo "<div class='card col-md-3'>";
+            echo "<img class='card-img-top mt-3' src='" . $prod['imagProd'] . "' alt='Card image cap'>";
+            echo "<ul class='social'>";
+            echo "<li><a href='#' type='submit' value='agregar' data-tip='Agregar al carrito'><i class='fa fa-shopping-cart'></i></a></li>";  
+            echo "</ul>";
+            echo "<div class='card-body'>";
+              echo "<h5 class='card-title'>".$prod['nomProd']."</h5>";
+              echo "<p class='card-text'>".$prod['precProd']."</p>";
+              echo "<a href='#' class='btn btn-warning'>Ver detalle</a>";
+            echo "</div>";
+         echo "</div>";
+      echo "</div>";
+   $contador++;
+   if ($contador == 4) {
+   echo "</div>";
+      $contador = 1;
+   }
+}
+?>

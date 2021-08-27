@@ -1,7 +1,6 @@
 <div class="mt-4 jumbotron">
-     <h3 class="display-4">Registrar producto</h3>
+    <h3 class="display-4">Registrar producto</h3>
 </div>
-
 <form action="<?php echo getUrlAdmin("Producto","Producto","postInsert");?>" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="form-group col-md-4">

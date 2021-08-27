@@ -3,7 +3,7 @@
     <li class="breadcrumb-item"><a href="index.html">Admin</a></li>
     <li class="breadcrumb-item active">Usuario</li>
 </ol>
-<a href="<?php echo getUrlAdmin("Usuario", "Usuario", "getInsert") ?>"><button>Insertar</button></a>
+<a href="<?php echo getUrlAdmin("Usuario", "Usuario", "getInsert") ?>"><button class='btn btn-primary'>Insertar</button></a>
 <div class="card mt-4">
     <div class="card-header">
         <!--<i class="fas fa-table me-1"></i>  -->
@@ -30,8 +30,8 @@
                     echo "<td>" . $usu['apellUsuario'] . "</td>";
                     echo "<td>" . $usu['telUsuario'] . "</td>";
              
-                    echo "<td><a><button type='button' >Editar</button></a></td>";
-                    echo "<td><a><button type='button'  >Eliminar</button></a></td>";
+                    echo "<td><a><button type='button'class='btn btn-primary'>Editar</button></a></td>";
+                    echo "<td><a><button type='button'class='btn btn-danger'>Eliminar</button></a></td>";
                     echo "</tr>";
                 }
                 ?>

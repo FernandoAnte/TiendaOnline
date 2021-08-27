@@ -13,10 +13,9 @@
 
         } 
 
-        public function getInsert()  // para cargar el formulario y poder unsertar lo que necesitemos
+        public function getInsert()  // para cargar el formulario y poder insertar lo que necesitemos
         {
-           
-             
+                      
             $sql="SELECT * FROM categoria";
             $categoria=$this->objProducto->consult($sql); 
             $sql="SELECT * FROM marca";
@@ -27,8 +26,7 @@
         }
 
         public function postInsert(){
-
-          
+      
 
             $nomProd=$_POST['nomProd'];
             $idMarca=$_POST['idMarca'];
@@ -62,46 +60,62 @@
                 echo "ups, ha ocurrido un error";
             }
         }
-
-
         public function consultar() {
 
            // $obj=new ProductoModel();
 
             $sql="SELECT * FROM producto ";
             $producto=$this->objProducto->consult($sql);
-            include_once '../View/Producto/consultar.php';
+            include_once '../View/Producto/consult.php';
         }
 
-
-        public function getEditar() {
+        public function getUpdate() {
             if (isset($_GET)) {
                 $id = $_GET['id'];
                 $sql = "SELECT * FROM producto where idProd = $id ";
-    
                 $producto = $this->objProducto->consult($sql);
                 $p=mysqli_fetch_assoc($producto);
-                include_once '../View/Producto/editar.php';
+                include_once '../View/Producto/update.php';
             } else {
                 echo "No llegaron los datos para Registrar";
             }
-            //$obj=new ProductoModel();
         }
 
-
-        public function editar() {
-               
-        }
-
-
-        public function eliminar() {
-           
+        public function postUpdate()
+    {
+        if(isset($_POST)){
             
+            $id = $_POST['idProd'];
+            $name = $_POST['nomProd'];
+            $sql="UPDATE producto SET  nomProd='$name' WHERE idProd = $id";
+            $this->objProducto->update($sql);
+            $this->objProducto->close();
+            redirect(getUrlAdmin("Producto","Producto","consult"));
+   
+        }else {
+                echo "No llegaron datos para Editar";
         }
+    }
 
+        public function getDelete(){
 
-        public function filtrar() {
-
+            $id=$_GET['id'];
+            $sql="SELECT * FROM producto WHERE idProd=$id";
+            $producto= $this->objProducto->delete($sql);
+    
+            include_once '../view/Producto/delete.php';
+        }
+    
+        public function postDelete(){
+            if (isset($_POST)){
+            $idProd=$_POST['idProd'];
+            $sql="DELETE  FROM producto WHERE idProd= $idProd";
+            $this->objProducto->insert($sql);
+            $this->objProducto->close();
+            redirect(getUrlAdmin("Producto","Producto","consultar"));
+            }else{
+                echo "epa nada";
+            }
         }
     }
 ?>

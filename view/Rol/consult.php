@@ -3,7 +3,7 @@
     <li class="breadcrumb-item"><a href="index.html">Admin</a></li>
     <li class="breadcrumb-item active">Rol</li>
 </ol>
-<a href="<?php echo getUrlAdmin("Rol", "Rol", "getInsert") ?>"><button>Insertar</button></a>
+<a href="<?php echo getUrlAdmin("Rol", "Rol", "getInsert") ?>"><button class='btn btn-primary'>Insertar</button></a>
 <div class="card mt-4">
     <div class="card-header">
         <!--<i class="fas fa-table me-1"></i>  -->
@@ -26,8 +26,8 @@
                     echo "<td>" . $rol['idRol'] . "</td>";
                     echo "<td>" . $rol['descRol'] . "</td>";
                     
-                    echo "<td><a href='".getUrlAdmin("Rol","Rol","getEditar", array("id" => $rol['idRol']))."'><button type='button'>Editar</button></a></td>";
-                    echo "<td><a href='".getUrlAdmin("Rol","Rol","getDelete", array("id" => $rol['idRol']))."'><button type='button'>Eliminar</button></a></td>";
+                    echo "<td><a href='".getUrlAdmin("Rol","Rol","getUpdate", array("id" => $rol['idRol']))."'><button class='btn btn-primary' type='button'>Editar</button></a></td>";
+                    echo "<td><a href='".getUrlAdmin("Rol","Rol","getDelete", array("id" => $rol['idRol']))."'><button class='btn btn-danger' type='button'>Eliminar</button></a></td>";
                     echo "</tr>";
                 }
                 ?>

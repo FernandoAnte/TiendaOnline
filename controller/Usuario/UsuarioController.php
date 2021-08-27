@@ -15,7 +15,7 @@
 
         public function getInsert()
         {
-            include_once '../View/Usuario/crear.php';
+            include_once '../View/Usuario/insert.php';
         }
 
         public function postInsert()
@@ -38,7 +38,7 @@
         {
             $sql="SELECT * FROM usuario ";
             $usuario= $this->objUsuario->consult($sql);
-            include_once '../View/Usuario/consultar.php';
+            include_once '../View/Usuario/consult.php';
         }
 
         public function getEditar()

@@ -27,10 +27,8 @@
                       <b>CALZADO HOMBRE</b>
                     </a>
                     <div class="dropdown-menu btn btn-light" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="<?php echo getUrl("CalzadoHombre","CalzadoHombre","getInsert")?>">Tenis</a>   <!-- Departamento","Departamento","getInsert -->
+                      <a class="dropdown-item" href="<?php echo getUrl("CalzadoHombre","CalzadoHombre","getInsert")?>">Tenis</a> 
                       <a class="dropdown-item" href="">Botín</a>
-                      <a class="dropdown-item" href="">Casual</a>
-                      <a class="dropdown-item" href="">Formal</a>
                     </div>
                 </li>
               </div>
@@ -41,10 +39,8 @@
                     <b>CALZADO MUJER</b>
                     </a>
                     <div class="dropdown-menu btn btn-light" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="">Tenis</a>
                       <a class="dropdown-item" href="<?php echo getUrl("CalzadoMujer","CalzadoMujer","getInsert")?>">Botín</a>
                       <a class="dropdown-item" href="">Zandalia</a>
-                      <a class="dropdown-item" href="">Baleta</a>
                     </div>
                 </li>
               </div>
