@@ -1,7 +1,7 @@
 <?php
 
    include_once '../lib/helpers.php';
-   include_once '../lib/helpersLogin.php';
+  // include_once '../lib/helpersLogin.php';
    include_once '../view/partial/head.php';
 
    echo "<body>";
@@ -13,12 +13,12 @@
             resolve();
         }else{
 
-          if ($_SESSION['Rol'] == 1 ){
+         /*  if ($_SESSION['Rol'] == 1 ){
             include_once 'admin.php';
           
           } else if ($_SESSION['Rol'] == 4 ){
             include_once 'menu.php';
-          }
+          } */
           //include_once '../view/partial/imagenes.php';
         } 
        

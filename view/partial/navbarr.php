@@ -50,14 +50,25 @@
                    
                  </li>
               </div>
-              <div class="col-3">   
-                <li class="nav-item active">
+              <div class="col-3">  
+                <?php 
+                   if (isset($_SESSION['auth']) ) {
+                    echo "<li class='nav-item active'><span class='nav-link'>".$_SESSION['nombre']." </span> </li>";
+                    echo "<li class='nav-item active'><a class='nav-link btn btn-outline-secondary' href='".getUrl("Acceso","Acceso","logout")."'>Cerrar sesion</a> </li>";
+
+                   }else{
+                     echo "<li class='nav-item active'><a class='nav-link btn btn-outline-secondary' href='login.php'>MI CUENTA</a> </li>";
+                   }
+
+                ?> 
+               <!--  <li class="nav-item active">
                   <a class="nav-link btn btn-outline-secondary" href="login.php">MI CUENTA</a>
-                </li>
+                </li> -->
               </div>
               <div class="col-3">
                 <button class="btn btn-outline-secondary" >
                     <span class="fas fa-shopping-cart"></span>
+                    <span id="cantprocar"></span>
                 </button>
               </div>
           </ul> 

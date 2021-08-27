@@ -1,5 +1,6 @@
 <?php
     include_once '../lib/helpers.php';
+    include_once '../lib/helpersLogin.php';
     include_once '../view/partialadmin/head.php';
     include_once '../view/partialadmin/navbar.php';     
        echo "<div id='layoutSidenav'>" ;             

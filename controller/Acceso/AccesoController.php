@@ -22,7 +22,12 @@
                 $_SESSION['Rol'] = $us['idRol'];
                 $_SESSION['auth'] = "ok"; 
             }
-            redirect("admin.php");
+            if ($_SESSION['Rol']==1) {
+                redirect("admin.php");
+            }else{
+                redirect("index.php"); 
+            }
+           
         }else{
             $_SESSION['mensaje'] = "el correo/nickname y/o contraseña son incorrectos";
             redirect("login.php"); 
